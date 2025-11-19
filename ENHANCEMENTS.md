@@ -24,15 +24,17 @@
 - **Responsive font sizing** (xl on mobile, 4xl on desktop)
 
 ### 4. Interactive Flip Cards (How It Works Section)
-- **3D flip animation** on click
-- **Front side**: Step number, title, description, and example text
-- **Back side**: Relevant image with animated text overlay
-- **Smooth 700ms transition** with 3D perspective
-- **Click indicator** ("Click to see example" / "Click to flip back")
+- **Automatic 3D flip animation** (no click required)
+- **Staggered timing**: Each card flips at different intervals (4s, 4.5s, 5s)
+- **Front side**: Step number, title, and description in card format
+- **Back side**: Full image with text overlay (no card background)
+- **Smooth 1-second transition** with 3D perspective
+- **Continuous loop**: Cards automatically flip back and forth
 - **Three unique images** for each step:
   - Step 1: Coffee and books at cafe
   - Step 2: People meeting outdoors
   - Step 3: Friends meeting for first time
+- **Text overlay on image**: Example text appears directly on the photo with glow effect
 
 ### 5. Advanced Animations
 - **Floating particles** canvas animation in hero section
@@ -66,11 +68,12 @@
 - Enhanced existing animations with more sophisticated timing
 
 ### User Experience Improvements
-- **Click-to-flip interaction** makes the page more engaging
+- **Automatic flip animation** creates dynamic, engaging content
 - **Navigation tabs** allow quick access to any section
 - **Animated text** draws attention to key messages
 - **Floating particles** create ambient movement
 - **Smooth scrolling** provides polished navigation experience
+- **Staggered card flips** prevent visual overload
 
 ## How to Use
 
@@ -79,9 +82,10 @@
 - On mobile, tap the hamburger menu to access navigation
 
 ### Flip Cards
-- Click any of the three "How It Works" cards to flip them
-- See example moments with beautiful images
-- Click again to flip back to the description
+- Cards automatically flip to show example moments
+- Each card has a different flip interval for visual variety
+- Front shows step information, back shows real-life example with image
+- No interaction needed - just watch the cards animate
 
 ### Waitlist
 - Click "Join Waitlist" button in hero, header, or pricing section

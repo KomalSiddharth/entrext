@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface FlipCardProps {
@@ -8,6 +8,7 @@ interface FlipCardProps {
   exampleText: string;
   imageSrc: string;
   imageAlt: string;
+  autoFlipDelay?: number;
 }
 
 export default function FlipCard({
@@ -17,16 +18,22 @@ export default function FlipCard({
   exampleText,
   imageSrc,
   imageAlt,
+  autoFlipDelay = 3000,
 }: FlipCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFlipped((prev) => !prev);
+    }, autoFlipDelay);
+
+    return () => clearInterval(interval);
+  }, [autoFlipDelay]);
+
   return (
-    <div
-      className="relative h-[400px] xl:h-[450px] cursor-pointer perspective-1000"
-      onClick={() => setIsFlipped(!isFlipped)}
-    >
+    <div className="relative h-[400px] xl:h-[450px] perspective-1000">
       <div
-        className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${
+        className={`relative w-full h-full transition-transform duration-1000 transform-style-3d ${
           isFlipped ? "rotate-y-180" : ""
         }`}
       >
@@ -43,45 +50,36 @@ export default function FlipCard({
               <h3 className="text-2xl xl:text-3xl font-semibold mb-4 text-foreground">
                 {title}
               </h3>
-              <p className="text-base xl:text-lg text-muted-foreground leading-relaxed mb-6 flex-1">
+              <p className="text-base xl:text-lg text-muted-foreground leading-relaxed flex-1">
                 {description}
               </p>
-              <div className="bg-muted/50 rounded-xl p-4 border border-border">
-                <p className="text-sm text-muted-foreground italic">
-                  {exampleText}
-                </p>
-              </div>
-              <div className="mt-4 text-center">
-                <p className="text-xs text-primary font-medium">Click to see example</p>
-              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="absolute inset-0 bg-card border-border backface-hidden rotate-y-180">
-          <CardContent className="p-0 h-full relative overflow-hidden rounded-lg">
+        <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-3xl overflow-hidden">
+          <div className="relative w-full h-full">
             <img
               src={imageSrc}
               alt={imageAlt}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-transparent flex items-end justify-center p-8">
-              <div className="text-center animate-slide-up">
-                <div className="mb-4">
-                  <div className="w-12 h-12 xl:w-14 xl:h-14 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-3">
-                    <span className="text-2xl xl:text-3xl font-bold text-primary">
-                      {stepNumber}
+            <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-background/20 flex items-center justify-center p-8">
+              <div className="text-center animate-fade-in">
+                <p className="text-xl xl:text-3xl font-bold text-foreground mb-2 text-glow">
+                  {exampleText}
+                </p>
+                <div className="mt-4">
+                  <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <span className="text-sm xl:text-base font-semibold text-primary">
+                      Step {stepNumber}
                     </span>
                   </div>
                 </div>
-                <p className="text-lg xl:text-2xl font-semibold text-foreground mb-3 animate-fade-in">
-                  {exampleText}
-                </p>
-                <p className="text-xs text-primary font-medium">Click to flip back</p>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

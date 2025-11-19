@@ -340,6 +340,7 @@ export default function LandingPage() {
                 exampleText="Looking for someone to grab coffee and chat about books ☕📚"
                 imageSrc="https://miaoda-site-img.s3cdn.medo.dev/images/a0fd8f52-043c-459c-a50d-767bb7520b72.jpg"
                 imageAlt="Two people having coffee and chatting at a cozy cafe"
+                autoFlipDelay={4000}
               />
 
               <FlipCard
@@ -349,6 +350,7 @@ export default function LandingPage() {
                 exampleText="3 people nearby are interested in joining you! 🎉"
                 imageSrc="https://miaoda-site-img.s3cdn.medo.dev/images/6d1b36c7-80d5-4c76-90c8-4f46cf1e958c.jpg"
                 imageAlt="People meeting and greeting each other outdoors"
+                autoFlipDelay={4500}
               />
 
               <FlipCard
@@ -358,6 +360,7 @@ export default function LandingPage() {
                 exampleText="Just people being people. 🌿"
                 imageSrc="https://miaoda-site-img.s3cdn.medo.dev/images/b3c66504-deca-4bd0-a93b-6db80c67f38f.jpg"
                 imageAlt="Friends meeting in real life for the first time"
+                autoFlipDelay={5000}
               />
             </div>
 
