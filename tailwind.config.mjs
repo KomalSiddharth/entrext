@@ -60,6 +60,10 @@ export default {
                     DEFAULT: 'hsl(var(--card))',
                     foreground: 'hsl(var(--card-foreground))'
                 },
+                footer: {
+                    DEFAULT: 'hsl(var(--footer-bg))',
+                    foreground: 'hsl(var(--footer-foreground))'
+                },
                 mode: {
                     date: 'hsl(var(--date-mode))',
                     friend: 'hsl(var(--friend-mode))',
@@ -74,7 +78,7 @@ export default {
             },
             backgroundImage: {
                 'gradient-primary': 'var(--gradient-primary)',
-                'gradient-sunset': 'var(--gradient-sunset)',
+                'gradient-accent': 'var(--gradient-accent)',
                 'gradient-hero': 'var(--gradient-hero)'
             },
             boxShadow: {

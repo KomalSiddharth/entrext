@@ -559,28 +559,28 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <footer className="py-8 xl:py-12 border-t border-border">
+        <footer className="py-8 xl:py-12 bg-footer border-t border-footer">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col xl:flex-row justify-between items-center gap-6 xl:gap-8">
               <div className="text-center xl:text-left">
-                <p className="text-base xl:text-lg font-semibold gradient-text mb-2">
+                <p className="text-base xl:text-lg font-semibold text-footer-foreground mb-2">
                   Companion
                 </p>
-                <p className="text-sm xl:text-base text-muted-foreground">
+                <p className="text-sm xl:text-base text-footer-foreground/70">
                   © Companion 2025
                 </p>
               </div>
               <div className="flex flex-wrap justify-center gap-4 xl:gap-8">
-                <a href="#about" className="text-sm xl:text-base text-muted-foreground hover:text-primary transition-colors">
+                <a href="#about" className="text-sm xl:text-base text-footer-foreground/70 hover:text-footer-foreground transition-colors">
                   About
                 </a>
-                <a href="#community" className="text-sm xl:text-base text-muted-foreground hover:text-primary transition-colors">
+                <a href="#community" className="text-sm xl:text-base text-footer-foreground/70 hover:text-footer-foreground transition-colors">
                   Community
                 </a>
-                <a href="#contact" className="text-sm xl:text-base text-muted-foreground hover:text-primary transition-colors">
+                <a href="#contact" className="text-sm xl:text-base text-footer-foreground/70 hover:text-footer-foreground transition-colors">
                   Contact
                 </a>
-                <a href="#privacy" className="text-sm xl:text-base text-muted-foreground hover:text-primary transition-colors">
+                <a href="#privacy" className="text-sm xl:text-base text-footer-foreground/70 hover:text-footer-foreground transition-colors">
                   Privacy
                 </a>
               </div>
