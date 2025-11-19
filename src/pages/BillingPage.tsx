@@ -147,10 +147,10 @@ export default function BillingPage() {
             Back to Pricing
           </Button>
 
-          <Card className="glass-light border-border">
+          <Card className="glass-light shadow-card border-border">
             <CardHeader className="text-center pb-8">
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center shadow-elevated">
                   <Sparkles className="w-10 h-10 text-primary" />
                 </div>
               </div>
@@ -242,7 +242,7 @@ export default function BillingPage() {
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
           <div className="xl:col-span-2">
-            <Card className="glass-light border-border">
+            <Card className="glass-light shadow-card border-border">
               <CardHeader>
                 <CardTitle className="text-2xl xl:text-3xl text-foreground flex items-center gap-3">
                   <Lock className="w-6 h-6 text-primary" />
@@ -440,7 +440,7 @@ export default function BillingPage() {
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full"
+                      className="w-full shadow-primary"
                       disabled={isProcessing}
                     >
                       {isProcessing ? "Processing..." : `Pay $${selectedPlan.price}/${selectedPlan.period}`}
@@ -452,7 +452,7 @@ export default function BillingPage() {
           </div>
 
           <div className="xl:col-span-1">
-            <Card className="glass-light border-border sticky top-8">
+            <Card className="glass-light shadow-elevated border-border sticky top-8">
               <CardHeader>
                 <CardTitle className="text-xl text-foreground">Order Summary</CardTitle>
               </CardHeader>

@@ -190,7 +190,7 @@ export default function LandingPage() {
             <div className="flex flex-col xl:flex-row gap-4 xl:gap-6 justify-center items-center mb-12 xl:mb-20">
               <Button
                 size="lg"
-                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full shadow-glow hover:shadow-soft transition-all duration-300 hover:scale-105 group"
+                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full shadow-primary hover:scale-105 transition-all duration-300 group"
                 onClick={() => setIsWaitlistOpen(true)}
               >
                 Join the waitlist
@@ -199,7 +199,7 @@ export default function LandingPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full hover:bg-primary/5 transition-all duration-300"
+                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full shadow-button hover:bg-primary/5 transition-all duration-300"
                 onClick={() => {
                   const element = document.getElementById("how-it-works");
                   element?.scrollIntoView({ behavior: "smooth" });
@@ -392,11 +392,11 @@ export default function LandingPage() {
               {connectionModes.map((mode, index) => (
                 <Card
                   key={index}
-                  className="glass-hover border-border group"
+                  className="glass-hover shadow-card-hover border-glow-hover border-border group"
                 >
                   <CardContent className="p-8 xl:p-10">
                     <div className="flex items-start gap-6">
-                      <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-3xl bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-soft group-hover:shadow-glow transition-all duration-300 group-hover:scale-110">
+                      <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-3xl bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-elevated group-hover:shadow-glow transition-all duration-300 group-hover:scale-110">
                         <span className="text-3xl xl:text-4xl">{mode.emoji}</span>
                       </div>
                       <div className="flex-1">
@@ -425,7 +425,7 @@ export default function LandingPage() {
 
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-8 mb-12 xl:mb-16 stagger-animation">
               {differentiators.map((item, index) => (
-                <Card key={index} className="glass-hover border-border">
+                <Card key={index} className="glass-hover shadow-card-hover border-border">
                   <CardContent className="p-6 xl:p-8 text-center">
                     <Check className="w-10 h-10 xl:w-12 xl:h-12 text-primary mx-auto mb-3 xl:mb-4" />
                     <h3 className="text-lg xl:text-xl font-semibold text-foreground mb-2">{item.title}</h3>
@@ -492,13 +492,13 @@ export default function LandingPage() {
               {pricingTiers.map((tier, index) => (
                 <Card
                   key={index}
-                  className={`glass-hover border-border ${
-                    tier.popular ? "ring-2 ring-primary shadow-glow scale-105" : ""
+                  className={`glass-hover shadow-card-hover border-border ${
+                    tier.popular ? "ring-2 ring-primary shadow-primary border-glow" : ""
                   }`}
                 >
                   <CardContent className="p-6 xl:p-8">
                     {tier.popular && (
-                      <div className="bg-primary text-primary-foreground text-xs xl:text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">
+                      <div className="bg-primary text-primary-foreground text-xs xl:text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4 shadow-button">
                         Most Popular
                       </div>
                     )}
@@ -522,7 +522,7 @@ export default function LandingPage() {
                       ))}
                     </ul>
                     <Button
-                      className="w-full"
+                      className={`w-full ${tier.popular ? "shadow-primary" : "shadow-button"}`}
                       variant={tier.popular ? "default" : "outline"}
                       onClick={() => {
                         const planKey = tier.name.toLowerCase();
@@ -550,7 +550,7 @@ export default function LandingPage() {
             </p>
             <Button
               size="lg"
-              className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full shadow-glow hover:shadow-soft transition-all duration-300 hover:scale-105 group"
+              className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full shadow-primary hover:scale-105 transition-all duration-300 group"
               onClick={() => setIsWaitlistOpen(true)}
             >
               Join the waitlist 🌿
