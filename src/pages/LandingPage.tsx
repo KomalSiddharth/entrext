@@ -392,7 +392,7 @@ export default function LandingPage() {
               {connectionModes.map((mode, index) => (
                 <Card
                   key={index}
-                  className="bg-card border-border hover-lift group"
+                  className="glass-hover border-border group"
                 >
                   <CardContent className="p-8 xl:p-10">
                     <div className="flex items-start gap-6">
@@ -425,7 +425,7 @@ export default function LandingPage() {
 
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-8 mb-12 xl:mb-16 stagger-animation">
               {differentiators.map((item, index) => (
-                <Card key={index} className="bg-card border-border hover-lift">
+                <Card key={index} className="glass-hover border-border">
                   <CardContent className="p-6 xl:p-8 text-center">
                     <Check className="w-10 h-10 xl:w-12 xl:h-12 text-primary mx-auto mb-3 xl:mb-4" />
                     <h3 className="text-lg xl:text-xl font-semibold text-foreground mb-2">{item.title}</h3>
@@ -492,7 +492,7 @@ export default function LandingPage() {
               {pricingTiers.map((tier, index) => (
                 <Card
                   key={index}
-                  className={`bg-card border-border hover-lift ${
+                  className={`glass-hover border-border ${
                     tier.popular ? "ring-2 ring-primary shadow-glow scale-105" : ""
                   }`}
                 >
@@ -590,7 +590,7 @@ export default function LandingPage() {
       </div>
 
       <Dialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="max-w-md glass-light">
           <DialogHeader>
             <DialogTitle className="text-2xl">Join the Waitlist</DialogTitle>
             <DialogDescription>

@@ -46,7 +46,7 @@ export default function Navigation({ onWaitlistClick }: NavigationProps) {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-background/95 backdrop-blur-md shadow-soft"
+            ? "glass-light shadow-soft"
             : "bg-transparent"
         }`}
       >
@@ -98,7 +98,7 @@ export default function Navigation({ onWaitlistClick }: NavigationProps) {
             className="absolute inset-0 bg-background/95 backdrop-blur-md"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="relative bg-card border-b border-border mt-16 p-6 space-y-4">
+          <div className="relative glass-light border-b border-border mt-16 p-6 space-y-4">
             {navItems.map((item) => (
               <button
                 key={item.id}
