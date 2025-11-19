@@ -209,4 +209,72 @@ All colors MUST be HSL.
   .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
   .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
   .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .text-pop-up {
+    animation: textPopUp 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  @keyframes textPopUp {
+    0% {
+      opacity: 0;
+      transform: scale(0.5) translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .word-reveal {
+    display: inline-block;
+    opacity: 0;
+    animation: wordReveal 0.6s ease-out forwards;
+  }
+
+  @keyframes wordReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) rotateX(-90deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5),
+                 0 0 40px hsl(var(--primary) / 0.3),
+                 0 0 60px hsl(var(--primary) / 0.2);
+    animation: glowPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% {
+      text-shadow: 0 0 20px hsl(var(--primary) / 0.5),
+                   0 0 40px hsl(var(--primary) / 0.3),
+                   0 0 60px hsl(var(--primary) / 0.2);
+    }
+    50% {
+      text-shadow: 0 0 30px hsl(var(--primary) / 0.7),
+                   0 0 60px hsl(var(--primary) / 0.5),
+                   0 0 90px hsl(var(--primary) / 0.3);
+    }
+  }
 }

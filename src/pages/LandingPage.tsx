@@ -10,6 +10,8 @@ import { addToWaitlist } from "@/db/api";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/common/Navigation";
 import FloatingParticles from "@/components/animations/FloatingParticles";
+import FlipCard from "@/components/animations/FlipCard";
+import AnimatedText from "@/components/animations/AnimatedText";
 
 interface WaitlistForm {
   email: string;
@@ -302,10 +304,11 @@ export default function LandingPage() {
                   alt="People connecting authentically"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end justify-center p-8">
-                  <p className="text-xl xl:text-3xl font-semibold text-foreground text-center">
-                    Because real connections happen in real life
-                  </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent flex items-end justify-center p-8">
+                  <AnimatedText
+                    text="Because real connections happen in real life"
+                    className="text-xl xl:text-4xl font-bold text-foreground text-center text-glow"
+                  />
                 </div>
               </div>
             </div>
@@ -328,80 +331,32 @@ export default function LandingPage() {
             </div>
 
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:gap-12 stagger-animation">
-              <div className="relative">
-                <Card className="bg-card border-border hover-lift h-full">
-                  <CardContent className="p-8 xl:p-10">
-                    <div className="absolute -top-6 left-8">
-                      <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow">
-                        <span className="text-2xl xl:text-3xl font-bold text-primary-foreground">1</span>
-                      </div>
-                    </div>
-                    <div className="mt-8">
-                      <h3 className="text-2xl xl:text-3xl font-semibold mb-4 text-foreground">
-                        Post Your Moment
-                      </h3>
-                      <p className="text-base xl:text-lg text-muted-foreground leading-relaxed mb-6">
-                        Share what you feel like doing right now. A walk in the park, grabbing chai, reading at a cafe, or anything else.
-                      </p>
-                      <div className="bg-muted/50 rounded-xl p-4 border border-border">
-                        <p className="text-sm text-muted-foreground italic">
-                          "Looking for someone to grab coffee and chat about books ☕📚"
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              <FlipCard
+                stepNumber={1}
+                title="Post Your Moment"
+                description="Share what you feel like doing right now. A walk in the park, grabbing chai, reading at a cafe, or anything else."
+                exampleText="Looking for someone to grab coffee and chat about books ☕📚"
+                imageSrc="https://miaoda-site-img.s3cdn.medo.dev/images/a0fd8f52-043c-459c-a50d-767bb7520b72.jpg"
+                imageAlt="Two people having coffee and chatting at a cozy cafe"
+              />
 
-              <div className="relative">
-                <Card className="bg-card border-border hover-lift h-full">
-                  <CardContent className="p-8 xl:p-10">
-                    <div className="absolute -top-6 left-8">
-                      <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow">
-                        <span className="text-2xl xl:text-3xl font-bold text-primary-foreground">2</span>
-                      </div>
-                    </div>
-                    <div className="mt-8">
-                      <h3 className="text-2xl xl:text-3xl font-semibold mb-4 text-foreground">
-                        Others Join In
-                      </h3>
-                      <p className="text-base xl:text-lg text-muted-foreground leading-relaxed mb-6">
-                        People nearby see your moment. If they vibe with it, they swipe right. Mutual interest? You're matched!
-                      </p>
-                      <div className="bg-muted/50 rounded-xl p-4 border border-border">
-                        <p className="text-sm text-muted-foreground italic">
-                          "3 people nearby are interested in joining you! 🎉"
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              <FlipCard
+                stepNumber={2}
+                title="Others Join In"
+                description="People nearby see your moment. If they vibe with it, they swipe right. Mutual interest? You're matched!"
+                exampleText="3 people nearby are interested in joining you! 🎉"
+                imageSrc="https://miaoda-site-img.s3cdn.medo.dev/images/6d1b36c7-80d5-4c76-90c8-4f46cf1e958c.jpg"
+                imageAlt="People meeting and greeting each other outdoors"
+              />
 
-              <div className="relative">
-                <Card className="bg-card border-border hover-lift h-full">
-                  <CardContent className="p-8 xl:p-10">
-                    <div className="absolute -top-6 left-8">
-                      <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow">
-                        <span className="text-2xl xl:text-3xl font-bold text-primary-foreground">3</span>
-                      </div>
-                    </div>
-                    <div className="mt-8">
-                      <h3 className="text-2xl xl:text-3xl font-semibold mb-4 text-foreground">
-                        Meet For Real
-                      </h3>
-                      <p className="text-base xl:text-lg text-muted-foreground leading-relaxed mb-6">
-                        Connect in the real world. Safe, natural, and authentic. No pressure, no pretending.
-                      </p>
-                      <div className="bg-muted/50 rounded-xl p-4 border border-border">
-                        <p className="text-sm text-muted-foreground italic">
-                          "Just people being people. 🌿"
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              <FlipCard
+                stepNumber={3}
+                title="Meet For Real"
+                description="Connect in the real world. Safe, natural, and authentic. No pressure, no pretending."
+                exampleText="Just people being people. 🌿"
+                imageSrc="https://miaoda-site-img.s3cdn.medo.dev/images/b3c66504-deca-4bd0-a93b-6db80c67f38f.jpg"
+                imageAlt="Friends meeting in real life for the first time"
+              />
             </div>
 
             <div className="mt-16 xl:mt-20 text-center">
