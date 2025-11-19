@@ -8,8 +8,7 @@ Companion
 ### 1.2 Website Description
 A professional landing page for Companion - a revolutionary human connection platform that helps people meet others nearby through shared real-life experiences and moments. The platform offers four connection modes: Date, Friend, Group, and Business, creating authentic relationships beyond traditional social media.
 
-### 1.3 Tagline
-Where Real Connections Begin / Meet people who feel like you
+### 1.3 Tagline\nWhere Real Connections Begin / Meet people who feel like you
 
 ## 2. Core Features & Functionality
 
@@ -18,50 +17,49 @@ Where Real Connections Begin / Meet people who feel like you
 #### Section 1: Hero Section
 - Headline: 'Companion - Meet people who feel like you.'
 - Subheadline: 'Real connections. Real moments. No endless scrolling.'
-- Primary CTA button: 'Join the waitlist' with emoji💫
-- Visual: Natural imagery of people in authentic moments (walking together, reading, sipping chai)
+- Primary CTA button: 'Join the waitlist' with emoji💫\n- Visual: Natural imagery of people in authentic moments (walking together, reading, sipping chai)
 - Design emphasis: Calm, welcoming first impression within 3 seconds
 
 #### Section 2: Why Companion (Emotional Connection)
 - Headline: 'We all talk online. But sometimes, it still feels like no one's really there.'
 - Body text: Explanation of how Companion helps find people nearby for simple shared activities
-- Visual storytelling: Transition from solitude to companionship\n\n#### Section 3: How It Works (3-Step Process)
+- Visual storytelling: Transition from solitude to companionship
+
+#### Section 3: How It Works (3-Step Process)
 - Step 1: 'Post what you feel like doing' - A walk, reading, chai, anything
 - Step 2: 'Others can join if they vibe with it' - They swipe right if it feels right
 - Step 3: 'Meet for real' - Safe, natural, and real-world
-- Closing line: 'No pressure. No pretending. Just people being people.'\n
-#### Section 4: Four Connection Modes
+- Closing line: 'No pressure. No pretending. Just people being people.'
+\n#### Section 4: Four Connection Modes
 - ❤️ Date Mode: 'Meet someone special naturally'
 - 🤝 Friend Mode: 'Find good people to hang out with'\n- 👥 Group Mode: 'Join circles that feel like home'
 - 💼 Business Mode: 'Meet people who work like you — and get you'\n- Tagline: 'From dating to chai circles to co-working — Companion brings people together, your way'
 
-#### Section 5: Differentiators
-- Key points: No fake profiles, No weird messages, No pressure
-- Message: 'Just small moments that turn into real memories'\n- Visual: Grid of 3-4 authentic photos (chai, walking, book club, group laughing)
+#### Section 5: Differentiators\n- Key points: No fake profiles, No weird messages, No pressure\n- Message: 'Just small moments that turn into real memories'
+- Visual: Grid of 3-4 authentic photos (chai, walking, book club, group laughing)\n
+#### Section 6: Join the Movement (Final CTA)\n- Headline: 'This isn't another app. It's a way to feel connected again.'
+- Subheadline: 'Because everyone deserves a real companion'
+- CTA button: 'Join the waitlist' with emoji 🌿
 
-#### Section 6: Join the Movement (Final CTA)
-- Headline: 'This isn't another app. It's a way to feel connected again.'
-- Subheadline: 'Because everyone deserves a real companion'\n- CTA button: 'Join the waitlist' with emoji 🌿
-\n#### Section 7: Pricing Page
-- Integrated pricing section showcasing subscription tiers or membership options
-- Clear value propositions for each tier
+#### Section 7: Pricing Page
+- Integrated pricing section showcasing subscription tiers or membership options\n- Clear value propositions for each tier
 - Highlight features and benefits
 
 #### Section 8: Footer
-- Copyright: '© Companion 2025'
-- Navigation links: About, Community, Contact, Privacy
-\n### 2.2 Key Messaging Points
+- Copyright: '© Companion 2025'\n- Navigation links: About, Community, Contact, Privacy
+
+### 2.2 Key Messaging Points
 - Core mechanic: Moment-based connection (not profile-based)
 - Safety features: No public location sharing, mutual matching required
 - Authenticity: Real experiences over endless scrolling
 - Multi-layered ecosystem: Personal, social, and professional connections
 
-## 3. Design Style\n
+## 3. Design Style
+
 ### 3.1 Visual Approach
 - Cinematic and innovative presentation with world-class animations and effects
 - Professional yet heart-touching aesthetic suitable for reputed companies
-- Natural, warm, and human-centered imagery
-
+- Natural, warm, and human-centered imagery\n
 ### 3.2 Color Palette
 - Soft, calming colors with sunlight-inspired tones
 - Warm earth tones (soft greens 🌿, warm beiges, gentle oranges for sunrise/sunset vibes)
@@ -73,8 +71,7 @@ Where Real Connections Begin / Meet people who feel like you
 - Subtle parallax scrolling for depth
 - Rounded corners (8-12px radius) for cards and buttons
 - Soft shadows for elevation and hierarchy
-- Clean, modern iconography with emotional warmth
-
+- Clean, modern iconography with emotional warmth\n
 ### 3.4 Layout Structure
 - Full-width hero section with centered content
 - Alternating content blocks with generous white space
@@ -88,7 +85,8 @@ Where Real Connections Begin / Meet people who feel like you
 - Slightly more expressive font for headlines to convey emotion
 - Comfortable line spacing for easy reading
 - Clear hierarchy between headlines, subheadlines, and body text
-\n### 3.6 Animation & Effects
+
+### 3.6 Animation & Effects
 - Smooth page transitions and scroll animations
 - Hover effects on interactive elements
 - Gentle pulsing effect on CTA buttons
