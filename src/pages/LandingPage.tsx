@@ -525,15 +525,11 @@ export default function LandingPage() {
                       className="w-full"
                       variant={tier.popular ? "default" : "outline"}
                       onClick={() => {
-                        if (tier.price === "Free") {
-                          setIsWaitlistOpen(true);
-                        } else {
-                          const planKey = tier.name.toLowerCase();
-                          navigate(`/billing?plan=${planKey}`);
-                        }
+                        const planKey = tier.name.toLowerCase();
+                        navigate(`/billing?plan=${planKey}`);
                       }}
                     >
-                      {tier.price === "Free" ? "Join Waitlist" : "Get Started"} <ArrowRight className="ml-2 w-4 h-4" />
+                      Get Started <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </CardContent>
                 </Card>

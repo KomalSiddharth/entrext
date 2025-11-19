@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import { createStripeCheckout } from "@/db/api";
-import { Shield, Lock, CreditCard, ArrowLeft, Check } from "lucide-react";
+import { Shield, Lock, CreditCard, ArrowLeft, Check, Sparkles } from "lucide-react";
 import type { PricingPlan } from "@/types/types";
 
 interface BillingForm {
@@ -95,10 +95,6 @@ export default function BillingPage() {
 
   const onSubmit = async (values: BillingForm) => {
     if (!selectedPlan || selectedPlan.price === 0) {
-      toast({
-        title: "Free Plan",
-        description: "The free plan doesn't require payment.",
-      });
       return;
     }
 
@@ -136,6 +132,100 @@ export default function BillingPage() {
 
   if (!selectedPlan) {
     return null;
+  }
+
+  if (selectedPlan.price === 0) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 py-12 xl:py-20">
+        <div className="max-w-4xl mx-auto px-4 xl:px-8">
+          <Button
+            variant="outline"
+            onClick={() => navigate("/#pricing")}
+            className="mb-8"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Pricing
+          </Button>
+
+          <Card className="bg-card border-border">
+            <CardHeader className="text-center pb-8">
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Sparkles className="w-10 h-10 text-primary" />
+                </div>
+              </div>
+              <CardTitle className="text-3xl xl:text-4xl text-foreground mb-4">
+                Welcome to Companion Free Plan! 🎉
+              </CardTitle>
+              <p className="text-lg text-muted-foreground">
+                Start connecting with people nearby at no cost
+              </p>
+            </CardHeader>
+
+            <CardContent className="space-y-8">
+              <div className="bg-muted/30 rounded-lg p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  What's Included in Your Free Plan:
+                </h3>
+                <ul className="space-y-3">
+                  {selectedPlan.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-base text-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-primary/5 rounded-lg p-6 border border-primary/20">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
+                  Next Steps:
+                </h3>
+                <ol className="space-y-2 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <span className="font-semibold text-primary">1.</span>
+                    <span>Join our waitlist to get early access</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-semibold text-primary">2.</span>
+                    <span>Download the app when it launches</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-semibold text-primary">3.</span>
+                    <span>Start making real connections in your area</span>
+                  </li>
+                </ol>
+              </div>
+
+              <div className="flex flex-col xl:flex-row gap-4">
+                <Button
+                  onClick={() => navigate("/")}
+                  className="flex-1"
+                  size="lg"
+                >
+                  Join Waitlist
+                  <Sparkles className="w-4 h-4 ml-2" />
+                </Button>
+                <Button
+                  onClick={() => navigate("/#pricing")}
+                  variant="outline"
+                  className="flex-1"
+                  size="lg"
+                >
+                  View Other Plans
+                </Button>
+              </div>
+
+              <div className="text-center pt-4">
+                <p className="text-sm text-muted-foreground">
+                  Want more features? Check out our Plus and Pro plans for unlimited connections and exclusive benefits.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
   }
 
   return (

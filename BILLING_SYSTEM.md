@@ -178,17 +178,18 @@ Use these test card numbers in development:
 ### Free Plan
 - Price: $0
 - Features: Basic connection features, up to 5 connections/month
-- Action: Join waitlist (no payment required)
+- Action: Shows welcome page with next steps (no payment required)
+- User Flow: Redirects to billing page → Shows Free Plan welcome screen → Join waitlist or view other plans
 
 ### Plus Plan
 - Price: $9.99/month
 - Features: Unlimited connections, priority matching, advanced filters
-- Action: Proceed to billing page
+- Action: Proceed to billing page with payment form
 
 ### Pro Plan
 - Price: $19.99/month
 - Features: Everything in Plus + VIP badge, exclusive events, 24/7 support
-- Action: Proceed to billing page
+- Action: Proceed to billing page with payment form
 
 ## Error Handling
 
