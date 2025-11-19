@@ -44,9 +44,30 @@ A professional landing page for Companion - a revolutionary human connection pla
 #### Section 7: Pricing Page
 - Integrated pricing section showcasing subscription tiers or membership options\n- Clear value propositions for each tier
 - Highlight features and benefits
+- Each pricing card includes a CTA button linking to the Billing Page
+\n#### Section 8: Billing Page
+- **Page Purpose**: Secure payment page for completing subscription purchase
+- **Access**: Linked from pricing card CTA buttons on Section 7
+- **Page Elements**:
+  - Order summary: Selected plan name, price, and billing cycle
+  - Payment form fields:\n    - Cardholder name (text input)
+    - Card number (secure input with card type detection)
+    - Expiration date (MM/YY format)
+    - CVV/CVC (secure3-4 digit input)
+    - Billing address (street, city, state, postal code, country)
+  - Security badges: SSL encryption indicator, trusted payment processor logos
+  - Terms checkbox:'I agree to the Terms of Service and Privacy Policy'
+  - Primary CTA button: 'Complete Payment' or 'Subscribe Now'
+  - Secondary link: 'Back to Pricing' for navigation
+- **Trust Elements**:
+  - Secure payment icons (Visa, Mastercard, Amex, etc.)
+  - Money-back guarantee or refund policy statement
+  - Customer support contact information
+- **Design Consistency**: Maintain landing page visual style with clean layout, soft colors, and trust-building elements
 
-#### Section 8: Footer
-- Copyright: '© Companion 2025'\n- Navigation links: About, Community, Contact, Privacy
+#### Section 9: Footer
+- Copyright: '© Companion 2025'
+- Navigation links: About, Community, Contact, Privacy
 
 ### 2.2 Key Messaging Points
 - Core mechanic: Moment-based connection (not profile-based)
@@ -56,10 +77,9 @@ A professional landing page for Companion - a revolutionary human connection pla
 
 ## 3. Design Style
 
-### 3.1 Visual Approach
-- Cinematic and innovative presentation with world-class animations and effects
-- Professional yet heart-touching aesthetic suitable for reputed companies
-- Natural, warm, and human-centered imagery\n
+### 3.1 Visual Approach\n- Cinematic and innovative presentation with world-class animations and effects\n- Professional yet heart-touching aesthetic suitable for reputed companies
+- Natural, warm, and human-centered imagery
+
 ### 3.2 Color Palette
 - Soft, calming colors with sunlight-inspired tones
 - Warm earth tones (soft greens 🌿, warm beiges, gentle oranges for sunrise/sunset vibes)
@@ -67,11 +87,11 @@ A professional landing page for Companion - a revolutionary human connection pla
 
 ### 3.3 Visual Details
 - Smooth scroll-triggered animations and micro-interactions
-- Gentle fade-in effects for content sections
-- Subtle parallax scrolling for depth
+- Gentle fade-in effects for content sections\n- Subtle parallax scrolling for depth
 - Rounded corners (8-12px radius) for cards and buttons
 - Soft shadows for elevation and hierarchy
-- Clean, modern iconography with emotional warmth\n
+- Clean, modern iconography with emotional warmth
+
 ### 3.4 Layout Structure
 - Full-width hero section with centered content
 - Alternating content blocks with generous white space
@@ -79,6 +99,7 @@ A professional landing page for Companion - a revolutionary human connection pla
 - Grid layout for photo galleries
 - Sticky navigation bar with smooth transitions
 - Mobile-responsive design with touch-optimized interactions
+- Billing page: Centered single-column form layout with clear visual hierarchy
 
 ### 3.5 Typography
 - Clean, readable sans-serif fonts for body text
@@ -86,10 +107,8 @@ A professional landing page for Companion - a revolutionary human connection pla
 - Comfortable line spacing for easy reading
 - Clear hierarchy between headlines, subheadlines, and body text
 
-### 3.6 Animation & Effects
-- Smooth page transitions and scroll animations
+### 3.6 Animation & Effects\n- Smooth page transitions and scroll animations
 - Hover effects on interactive elements
-- Gentle pulsing effect on CTA buttons
-- Fade and slide animations for content reveals
-- Subtle background animations (floating particles or gradient shifts)
-- Loading animations that feel premium and polished
+- Gentle pulsing effect on CTA buttons\n- Fade and slide animations for content reveals
+- Subtle background animations (floating particles or gradient shifts)\n- Loading animations that feel premium and polished
+- Billing page: Real-time form validation with smooth error/success indicators

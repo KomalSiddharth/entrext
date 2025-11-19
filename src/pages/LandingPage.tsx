@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Heart, Users, Briefcase, UserPlus, ArrowRight, Check, Sparkles, Zap, Shield, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -21,6 +22,7 @@ export default function LandingPage() {
   const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const form = useForm<WaitlistForm>({
     defaultValues: {
@@ -519,9 +521,16 @@ export default function LandingPage() {
                     <Button
                       className="w-full"
                       variant={tier.popular ? "default" : "outline"}
-                      onClick={() => setIsWaitlistOpen(true)}
+                      onClick={() => {
+                        if (tier.price === "Free") {
+                          setIsWaitlistOpen(true);
+                        } else {
+                          const planKey = tier.name.toLowerCase();
+                          navigate(`/billing?plan=${planKey}`);
+                        }
+                      }}
                     >
-                      Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                      {tier.price === "Free" ? "Join Waitlist" : "Get Started"} <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                   </CardContent>
                 </Card>

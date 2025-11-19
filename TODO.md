@@ -1,4 +1,4 @@
-# Task: Build Companion Landing Page
+# Task: Build Companion Landing Page + Billing System
 
 ## Plan
 - [x] 1. Setup Supabase for waitlist email collection
@@ -47,6 +47,14 @@
   - [x] 8.3 Test waitlist form submission
   - [x] 8.4 Test flip card interactions
   - [x] 8.5 Test navigation scroll behavior
+- [x] 9. Payment & Billing System
+  - [x] 9.1 Create orders table migration
+  - [x] 9.2 Deploy Stripe Edge Functions
+  - [x] 9.3 Create BillingPage component
+  - [x] 9.4 Create PaymentSuccess page
+  - [x] 9.5 Update pricing cards with billing links
+  - [x] 9.6 Add order types and API functions
+  - [x] 9.7 Test payment flow
 
 ## Notes
 - Using warm, natural color palette with soft greens, beiges, and sunset tones
@@ -61,6 +69,8 @@
   - Text glow effects on image overlays
   - Stagger animations for grid items
   - Hover lift effects on cards
-- All tasks completed successfully!
+- Payment system using Stripe with Edge Functions
+- Secure payment processing with server-side validation
+
 
 
