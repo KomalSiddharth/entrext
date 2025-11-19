@@ -176,9 +176,9 @@ export default function LandingPage() {
             </div>
 
             <h1 className="text-5xl xl:text-8xl font-bold mb-4 xl:mb-8 text-foreground leading-tight">
-              Meet People Who
+              Meet people who
               <br />
-              <span className="text-shimmer">Feel Like You</span>
+              <span className="text-shimmer">feel like home</span>
             </h1>
 
             <p className="text-xl xl:text-3xl mb-6 xl:mb-8 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
