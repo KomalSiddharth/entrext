@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Heart, Users, Briefcase, UserPlus, ArrowRight, Check, Sparkles } from "lucide-react";
+import { Heart, Users, Briefcase, UserPlus, ArrowRight, Check, Sparkles, Zap, Shield, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -8,6 +8,8 @@ import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import { addToWaitlist } from "@/db/api";
 import { Card, CardContent } from "@/components/ui/card";
+import Navigation from "@/components/common/Navigation";
+import FloatingParticles from "@/components/animations/FloatingParticles";
 
 interface WaitlistForm {
   email: string;
@@ -79,36 +81,36 @@ export default function LandingPage() {
       icon: Heart,
       title: "Date Mode",
       emoji: "❤️",
-      description: "Meet someone special naturally",
+      description: "Meet someone special naturally through shared moments and genuine connections",
       color: "mode-date",
     },
     {
       icon: UserPlus,
       title: "Friend Mode",
       emoji: "🤝",
-      description: "Find good people to hang out with",
+      description: "Find good people to hang out with and build lasting friendships",
       color: "mode-friend",
     },
     {
       icon: Users,
       title: "Group Mode",
       emoji: "👥",
-      description: "Join circles that feel like home",
+      description: "Join circles that feel like home and connect with communities",
       color: "mode-group",
     },
     {
       icon: Briefcase,
       title: "Business Mode",
       emoji: "💼",
-      description: "Meet people who work like you — and get you",
+      description: "Meet people who work like you — and get you professionally",
       color: "mode-business",
     },
   ];
 
   const differentiators = [
-    "No fake profiles",
-    "No weird messages",
-    "No pressure",
+    { title: "No fake profiles", description: "Every user is verified and authentic" },
+    { title: "No weird messages", description: "Connect through shared activities, not DMs" },
+    { title: "No pressure", description: "Meet at your own pace, on your own terms" },
   ];
 
   const pricingTiers = [
@@ -152,149 +154,296 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
-      <div className="container mx-auto px-4 xl:px-8">
-        <section className="min-h-screen flex flex-col justify-center items-center text-center py-12 xl:py-20">
-          <div className="animate-slide-up max-w-4xl">
-            <h1 className="text-4xl xl:text-7xl font-bold mb-4 xl:mb-6 text-foreground">
-              Companion
+    <div className="min-h-screen bg-gradient-hero overflow-hidden">
+      <Navigation onWaitlistClick={() => setIsWaitlistOpen(true)} />
+
+      <section className="relative min-h-screen flex flex-col justify-center items-center text-center py-20 xl:py-32">
+        <FloatingParticles />
+        
+        <div className="container mx-auto px-4 xl:px-8 relative z-10">
+          <div className="animate-slide-up max-w-5xl mx-auto">
+            <div className="mb-6 xl:mb-8 inline-block">
+              <div className="flex items-center gap-2 bg-primary/10 rounded-full px-4 xl:px-6 py-2 xl:py-3 animate-bounce-subtle">
+                <Sparkles className="w-4 h-4 xl:w-5 xl:h-5 text-primary" />
+                <span className="text-sm xl:text-base text-primary font-medium">
+                  Join 10,000+ people on the waitlist
+                </span>
+              </div>
+            </div>
+
+            <h1 className="text-5xl xl:text-8xl font-bold mb-4 xl:mb-8 text-foreground leading-tight">
+              Meet People Who
+              <br />
+              <span className="text-shimmer">Feel Like You</span>
             </h1>
-            <p className="text-2xl xl:text-4xl mb-3 xl:mb-4 gradient-text font-semibold">
-              Meet people who feel like you
-            </p>
-            <p className="text-lg xl:text-2xl mb-8 xl:mb-12 text-muted-foreground max-w-2xl mx-auto">
-              Real connections. Real moments. No endless scrolling.
-            </p>
-            <Button
-              size="lg"
-              className="text-base xl:text-xl px-6 xl:px-10 py-4 xl:py-7 rounded-full shadow-glow hover:shadow-soft transition-all duration-300 hover:scale-105"
-              onClick={() => setIsWaitlistOpen(true)}
-            >
-              Join the waitlist <Sparkles className="ml-2 w-5 h-5" />
-            </Button>
-          </div>
 
-          <div className="mt-12 xl:mt-20 grid grid-cols-1 xl:grid-cols-3 gap-4 xl:gap-8 w-full max-w-6xl">
-            <div className="relative h-48 xl:h-80 rounded-2xl overflow-hidden shadow-soft">
-              <img
-                src="https://miaoda-site-img.s3cdn.medo.dev/images/919740dc-1b68-4753-a277-8349c2c19f2e.jpg"
-                alt="Two people walking together outdoors"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="relative h-48 xl:h-80 rounded-2xl overflow-hidden shadow-soft">
-              <img
-                src="https://miaoda-site-img.s3cdn.medo.dev/images/a3baa8cd-3e03-432d-8deb-f78c6abcb9b5.jpg"
-                alt="Person reading in cozy cafe"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="relative h-48 xl:h-80 rounded-2xl overflow-hidden shadow-soft">
-              <img
-                src="https://miaoda-site-img.s3cdn.medo.dev/images/6a82df67-b67a-409f-9a70-016c20c6a75d.jpg"
-                alt="Friends sharing chai together"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16 xl:py-32 fade-on-scroll">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl xl:text-5xl font-bold mb-6 xl:mb-8 text-foreground">
-              We all talk online. But sometimes, it still feels like no one's really there.
-            </h2>
-            <p className="text-lg xl:text-2xl text-muted-foreground leading-relaxed mb-8 xl:mb-12">
-              Companion helps you find people nearby for simple shared activities. A walk. Reading together. Chai. Whatever feels right in the moment.
+            <p className="text-xl xl:text-3xl mb-6 xl:mb-8 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Real connections. Real moments.
+              <br />
+              <span className="gradient-text font-semibold">No endless scrolling.</span>
             </p>
-            <div className="relative h-64 xl:h-96 rounded-2xl overflow-hidden shadow-soft">
-              <img
-                src="https://miaoda-site-img.s3cdn.medo.dev/images/2c324057-149d-4805-874f-ad5d35cfa23d.jpg"
-                alt="People connecting authentically"
-                className="w-full h-full object-cover"
-              />
+
+            <div className="flex flex-col xl:flex-row gap-4 xl:gap-6 justify-center items-center mb-12 xl:mb-20">
+              <Button
+                size="lg"
+                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full shadow-glow hover:shadow-soft transition-all duration-300 hover:scale-105 group"
+                onClick={() => setIsWaitlistOpen(true)}
+              >
+                Join the waitlist
+                <Sparkles className="ml-2 w-5 h-5 xl:w-6 xl:h-6 group-hover:rotate-12 transition-transform" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full hover:bg-primary/5 transition-all duration-300"
+                onClick={() => {
+                  const element = document.getElementById("how-it-works");
+                  element?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Learn More
+                <ArrowRight className="ml-2 w-5 h-5 xl:w-6 xl:h-6" />
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-3 gap-6 xl:gap-12 max-w-2xl mx-auto stagger-animation">
+              <div className="text-center">
+                <div className="text-3xl xl:text-5xl font-bold text-primary mb-2">10K+</div>
+                <div className="text-sm xl:text-base text-muted-foreground">Waitlist Members</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl xl:text-5xl font-bold text-primary mb-2">4</div>
+                <div className="text-sm xl:text-base text-muted-foreground">Connection Modes</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl xl:text-5xl font-bold text-primary mb-2">100%</div>
+                <div className="text-sm xl:text-base text-muted-foreground">Authentic</div>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section className="py-16 xl:py-32 fade-on-scroll">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle">
+          <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
+            <div className="w-1.5 h-3 bg-primary rounded-full mt-2 animate-float" />
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 xl:px-8">
+        <section id="why-companion" className="py-20 xl:py-40 fade-on-scroll">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl xl:text-5xl font-bold text-center mb-12 xl:mb-20 text-foreground">
-              How It Works
-            </h2>
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:gap-12">
-              <Card className="bg-card border-border hover:shadow-soft transition-all duration-300">
+            <div className="text-center mb-12 xl:mb-20">
+              <div className="inline-block mb-4">
+                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
+                  Why Companion
+                </span>
+              </div>
+              <h2 className="text-4xl xl:text-6xl font-bold mb-6 xl:mb-8 text-foreground leading-tight">
+                We all talk online.
+                <br />
+                But sometimes, it still feels like
+                <br />
+                <span className="gradient-text">no one's really there.</span>
+              </h2>
+              <p className="text-lg xl:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                Companion helps you find people nearby for simple shared activities. A walk. Reading together. Chai. Whatever feels right in the moment.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-8 stagger-animation">
+              <Card className="bg-card border-border hover-lift">
                 <CardContent className="p-6 xl:p-8 text-center">
-                  <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 xl:mb-6">
-                    <span className="text-2xl xl:text-4xl font-bold text-primary">1</span>
+                  <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 xl:mb-6">
+                    <Shield className="w-7 h-7 xl:w-8 xl:h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 xl:mb-4 text-foreground">
-                    Post what you feel like doing
+                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 text-foreground">
+                    Safe & Secure
                   </h3>
                   <p className="text-base xl:text-lg text-muted-foreground">
-                    A walk, reading, chai, anything
+                    No public location sharing. Mutual matching required. Your safety is our priority.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-card border-border hover:shadow-soft transition-all duration-300">
+              <Card className="bg-card border-border hover-lift">
                 <CardContent className="p-6 xl:p-8 text-center">
-                  <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 xl:mb-6">
-                    <span className="text-2xl xl:text-4xl font-bold text-primary">2</span>
+                  <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 xl:mb-6">
+                    <Star className="w-7 h-7 xl:w-8 xl:h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 xl:mb-4 text-foreground">
-                    Others can join if they vibe with it
+                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 text-foreground">
+                    Authentic Moments
                   </h3>
                   <p className="text-base xl:text-lg text-muted-foreground">
-                    They swipe right if it feels right
+                    Real experiences over endless scrolling. Connect through shared activities, not profiles.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-card border-border hover:shadow-soft transition-all duration-300">
+              <Card className="bg-card border-border hover-lift">
                 <CardContent className="p-6 xl:p-8 text-center">
-                  <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 xl:mb-6">
-                    <span className="text-2xl xl:text-4xl font-bold text-primary">3</span>
+                  <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 xl:mb-6">
+                    <Zap className="w-7 h-7 xl:w-8 xl:h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 xl:mb-4 text-foreground">
-                    Meet for real
+                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 text-foreground">
+                    Instant Connection
                   </h3>
                   <p className="text-base xl:text-lg text-muted-foreground">
-                    Safe, natural, and real-world
+                    Post what you feel like doing. Others join if they vibe with it. Simple as that.
                   </p>
                 </CardContent>
               </Card>
             </div>
-            <p className="text-lg xl:text-2xl text-center mt-12 xl:mt-16 text-muted-foreground italic">
-              No pressure. No pretending. Just people being people.
-            </p>
+
+            <div className="mt-16 xl:mt-24 relative">
+              <div className="relative h-64 xl:h-[500px] rounded-3xl overflow-hidden shadow-glow">
+                <img
+                  src="https://miaoda-site-img.s3cdn.medo.dev/images/2c324057-149d-4805-874f-ad5d35cfa23d.jpg"
+                  alt="People connecting authentically"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end justify-center p-8">
+                  <p className="text-xl xl:text-3xl font-semibold text-foreground text-center">
+                    Because real connections happen in real life
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="py-16 xl:py-32 fade-on-scroll">
+        <section id="how-it-works" className="py-20 xl:py-40 fade-on-scroll">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl xl:text-5xl font-bold text-center mb-6 xl:mb-8 text-foreground">
-              Four Ways to Connect
-            </h2>
-            <p className="text-lg xl:text-xl text-center mb-12 xl:mb-16 text-muted-foreground max-w-3xl mx-auto">
-              From dating to chai circles to co-working — Companion brings people together, your way
-            </p>
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8">
+            <div className="text-center mb-12 xl:mb-20">
+              <div className="inline-block mb-4">
+                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
+                  How It Works
+                </span>
+              </div>
+              <h2 className="text-4xl xl:text-6xl font-bold mb-6 text-foreground">
+                Three Simple Steps to
+                <br />
+                <span className="gradient-text">Real Connections</span>
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:gap-12 stagger-animation">
+              <div className="relative">
+                <Card className="bg-card border-border hover-lift h-full">
+                  <CardContent className="p-8 xl:p-10">
+                    <div className="absolute -top-6 left-8">
+                      <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow">
+                        <span className="text-2xl xl:text-3xl font-bold text-primary-foreground">1</span>
+                      </div>
+                    </div>
+                    <div className="mt-8">
+                      <h3 className="text-2xl xl:text-3xl font-semibold mb-4 text-foreground">
+                        Post Your Moment
+                      </h3>
+                      <p className="text-base xl:text-lg text-muted-foreground leading-relaxed mb-6">
+                        Share what you feel like doing right now. A walk in the park, grabbing chai, reading at a cafe, or anything else.
+                      </p>
+                      <div className="bg-muted/50 rounded-xl p-4 border border-border">
+                        <p className="text-sm text-muted-foreground italic">
+                          "Looking for someone to grab coffee and chat about books ☕📚"
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="relative">
+                <Card className="bg-card border-border hover-lift h-full">
+                  <CardContent className="p-8 xl:p-10">
+                    <div className="absolute -top-6 left-8">
+                      <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow">
+                        <span className="text-2xl xl:text-3xl font-bold text-primary-foreground">2</span>
+                      </div>
+                    </div>
+                    <div className="mt-8">
+                      <h3 className="text-2xl xl:text-3xl font-semibold mb-4 text-foreground">
+                        Others Join In
+                      </h3>
+                      <p className="text-base xl:text-lg text-muted-foreground leading-relaxed mb-6">
+                        People nearby see your moment. If they vibe with it, they swipe right. Mutual interest? You're matched!
+                      </p>
+                      <div className="bg-muted/50 rounded-xl p-4 border border-border">
+                        <p className="text-sm text-muted-foreground italic">
+                          "3 people nearby are interested in joining you! 🎉"
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="relative">
+                <Card className="bg-card border-border hover-lift h-full">
+                  <CardContent className="p-8 xl:p-10">
+                    <div className="absolute -top-6 left-8">
+                      <div className="w-12 h-12 xl:w-16 xl:h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-glow">
+                        <span className="text-2xl xl:text-3xl font-bold text-primary-foreground">3</span>
+                      </div>
+                    </div>
+                    <div className="mt-8">
+                      <h3 className="text-2xl xl:text-3xl font-semibold mb-4 text-foreground">
+                        Meet For Real
+                      </h3>
+                      <p className="text-base xl:text-lg text-muted-foreground leading-relaxed mb-6">
+                        Connect in the real world. Safe, natural, and authentic. No pressure, no pretending.
+                      </p>
+                      <div className="bg-muted/50 rounded-xl p-4 border border-border">
+                        <p className="text-sm text-muted-foreground italic">
+                          "Just people being people. 🌿"
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            <div className="mt-16 xl:mt-20 text-center">
+              <p className="text-xl xl:text-3xl text-foreground font-medium italic">
+                No pressure. No pretending. Just people being people.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="connection-modes" className="py-20 xl:py-40 fade-on-scroll">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12 xl:mb-20">
+              <div className="inline-block mb-4">
+                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
+                  Connection Modes
+                </span>
+              </div>
+              <h2 className="text-4xl xl:text-6xl font-bold mb-6 text-foreground">
+                Four Ways to Connect
+              </h2>
+              <p className="text-lg xl:text-2xl text-muted-foreground max-w-3xl mx-auto">
+                From dating to chai circles to co-working — Companion brings people together, your way
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-8 stagger-animation">
               {connectionModes.map((mode, index) => (
                 <Card
                   key={index}
-                  className="bg-card border-border hover:shadow-soft transition-all duration-300 hover:scale-105"
+                  className="bg-card border-border hover-lift group"
                 >
-                  <CardContent className="p-6 xl:p-8">
-                    <div className="flex items-start gap-4 xl:gap-6">
-                      <div className={`w-12 h-12 xl:w-16 xl:h-16 rounded-2xl bg-${mode.color}/10 flex items-center justify-center flex-shrink-0`}>
-                        <span className="text-2xl xl:text-4xl">{mode.emoji}</span>
+                  <CardContent className="p-8 xl:p-10">
+                    <div className="flex items-start gap-6">
+                      <div className="w-16 h-16 xl:w-20 xl:h-20 rounded-3xl bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-soft group-hover:shadow-glow transition-all duration-300 group-hover:scale-110">
+                        <span className="text-3xl xl:text-4xl">{mode.emoji}</span>
                       </div>
-                      <div>
-                        <h3 className="text-xl xl:text-2xl font-semibold mb-2 xl:mb-3 text-foreground">
+                      <div className="flex-1">
+                        <h3 className="text-2xl xl:text-3xl font-semibold mb-3 text-foreground">
                           {mode.title}
                         </h3>
-                        <p className="text-base xl:text-lg text-muted-foreground">
+                        <p className="text-base xl:text-lg text-muted-foreground leading-relaxed">
                           {mode.description}
                         </p>
                       </div>
@@ -306,47 +455,53 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="py-16 xl:py-32 fade-on-scroll">
+        <section className="py-20 xl:py-40 fade-on-scroll">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl xl:text-5xl font-bold text-center mb-6 xl:mb-8 text-foreground">
-              What Makes Us Different
-            </h2>
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-8 mb-12 xl:mb-16">
+            <div className="text-center mb-12 xl:mb-16">
+              <h2 className="text-4xl xl:text-6xl font-bold mb-6 text-foreground">
+                What Makes Us Different
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-8 mb-12 xl:mb-16 stagger-animation">
               {differentiators.map((item, index) => (
-                <Card key={index} className="bg-card border-border">
+                <Card key={index} className="bg-card border-border hover-lift">
                   <CardContent className="p-6 xl:p-8 text-center">
                     <Check className="w-10 h-10 xl:w-12 xl:h-12 text-primary mx-auto mb-3 xl:mb-4" />
-                    <h3 className="text-lg xl:text-xl font-semibold text-foreground">{item}</h3>
+                    <h3 className="text-lg xl:text-xl font-semibold text-foreground mb-2">{item.title}</h3>
+                    <p className="text-sm xl:text-base text-muted-foreground">{item.description}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
+
             <p className="text-xl xl:text-3xl text-center mb-12 xl:mb-16 text-foreground font-medium">
               Just small moments that turn into real memories
             </p>
-            <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
-              <div className="relative h-40 xl:h-64 rounded-2xl overflow-hidden shadow-soft">
+
+            <div className="grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6 stagger-animation">
+              <div className="relative h-40 xl:h-64 rounded-2xl overflow-hidden shadow-soft hover-lift">
                 <img
                   src="https://miaoda-site-img.s3cdn.medo.dev/images/6a82df67-b67a-409f-9a70-016c20c6a75d.jpg"
                   alt="Sharing chai"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="relative h-40 xl:h-64 rounded-2xl overflow-hidden shadow-soft">
+              <div className="relative h-40 xl:h-64 rounded-2xl overflow-hidden shadow-soft hover-lift">
                 <img
                   src="https://miaoda-site-img.s3cdn.medo.dev/images/919740dc-1b68-4753-a277-8349c2c19f2e.jpg"
                   alt="Walking together"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="relative h-40 xl:h-64 rounded-2xl overflow-hidden shadow-soft">
+              <div className="relative h-40 xl:h-64 rounded-2xl overflow-hidden shadow-soft hover-lift">
                 <img
                   src="https://miaoda-site-img.s3cdn.medo.dev/images/40cdf771-331d-4027-b5b4-54ddb70e2ce9.jpg"
                   alt="Book club"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="relative h-40 xl:h-64 rounded-2xl overflow-hidden shadow-soft">
+              <div className="relative h-40 xl:h-64 rounded-2xl overflow-hidden shadow-soft hover-lift">
                 <img
                   src="https://miaoda-site-img.s3cdn.medo.dev/images/c082c899-a22e-48b0-81a4-04819a9f2e3c.jpg"
                   alt="Group laughing"
@@ -357,20 +512,28 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="py-16 xl:py-32 fade-on-scroll">
+        <section id="pricing" className="py-20 xl:py-40 fade-on-scroll">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl xl:text-5xl font-bold text-center mb-6 xl:mb-8 text-foreground">
-              Choose Your Plan
-            </h2>
-            <p className="text-lg xl:text-xl text-center mb-12 xl:mb-16 text-muted-foreground max-w-3xl mx-auto">
-              Start for free, upgrade when you're ready
-            </p>
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-8">
+            <div className="text-center mb-12 xl:mb-20">
+              <div className="inline-block mb-4">
+                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
+                  Pricing
+                </span>
+              </div>
+              <h2 className="text-4xl xl:text-6xl font-bold mb-6 text-foreground">
+                Choose Your Plan
+              </h2>
+              <p className="text-lg xl:text-2xl text-muted-foreground max-w-3xl mx-auto">
+                Start for free, upgrade when you're ready
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-8 stagger-animation">
               {pricingTiers.map((tier, index) => (
                 <Card
                   key={index}
-                  className={`bg-card border-border hover:shadow-soft transition-all duration-300 ${
-                    tier.popular ? "ring-2 ring-primary shadow-glow" : ""
+                  className={`bg-card border-border hover-lift ${
+                    tier.popular ? "ring-2 ring-primary shadow-glow scale-105" : ""
                   }`}
                 >
                   <CardContent className="p-6 xl:p-8">
@@ -412,20 +575,23 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="py-16 xl:py-32 fade-on-scroll">
+        <section className="py-20 xl:py-40 fade-on-scroll">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl xl:text-5xl font-bold mb-6 xl:mb-8 text-foreground">
-              This isn't another app. It's a way to feel connected again.
+            <h2 className="text-4xl xl:text-6xl font-bold mb-6 xl:mb-8 text-foreground leading-tight">
+              This isn't another app.
+              <br />
+              It's a way to <span className="gradient-text">feel connected</span> again.
             </h2>
             <p className="text-xl xl:text-3xl mb-8 xl:mb-12 text-muted-foreground font-medium">
               Because everyone deserves a real companion
             </p>
             <Button
               size="lg"
-              className="text-base xl:text-xl px-6 xl:px-10 py-4 xl:py-7 rounded-full shadow-glow hover:shadow-soft transition-all duration-300 hover:scale-105"
+              className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full shadow-glow hover:shadow-soft transition-all duration-300 hover:scale-105 group"
               onClick={() => setIsWaitlistOpen(true)}
             >
               Join the waitlist 🌿
+              <ArrowRight className="ml-2 w-5 h-5 xl:w-6 xl:h-6 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </section>
@@ -434,7 +600,7 @@ export default function LandingPage() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col xl:flex-row justify-between items-center gap-6 xl:gap-8">
               <div className="text-center xl:text-left">
-                <p className="text-base xl:text-lg font-semibold text-foreground mb-2">
+                <p className="text-base xl:text-lg font-semibold gradient-text mb-2">
                   Companion
                 </p>
                 <p className="text-sm xl:text-base text-muted-foreground">
