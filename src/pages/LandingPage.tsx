@@ -158,7 +158,7 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-hero overflow-hidden">
+    <div className="min-h-screen overflow-hidden bg-gradient-hero">
       <Navigation onWaitlistClick={() => setIsWaitlistOpen(true)} />
 
       <section className="relative min-h-screen flex flex-col justify-center items-center text-center py-20 xl:py-32">
@@ -167,24 +167,24 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 xl:px-8 relative z-10">
           <div className="animate-slide-up max-w-5xl mx-auto">
             <div className="mb-6 xl:mb-8 inline-block">
-              <div className="flex items-center gap-2 bg-primary/10 rounded-full px-4 xl:px-6 py-2 xl:py-3 animate-bounce-subtle">
-                <Sparkles className="w-4 h-4 xl:w-5 xl:h-5 text-primary" />
-                <span className="text-sm xl:text-base text-primary font-medium">
+              <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 xl:px-6 py-2 xl:py-3 animate-bounce-subtle">
+                <Sparkles className="w-4 h-4 xl:w-5 xl:h-5 text-white" />
+                <span className="text-sm xl:text-base text-white font-medium">
                   Join 10,000+ people on the waitlist
                 </span>
               </div>
             </div>
 
-            <h1 className="text-5xl xl:text-8xl font-bold mb-4 xl:mb-8 text-foreground leading-tight">
+            <h1 className="text-5xl xl:text-8xl font-bold mb-4 xl:mb-8 text-white leading-tight">
               Meet people who
               <br />
               <span className="text-shimmer">feel like home</span>
             </h1>
 
-            <p className="text-xl xl:text-3xl mb-6 xl:mb-8 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl xl:text-3xl mb-6 xl:mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
               Real connections. Real moments.
               <br />
-              <span className="gradient-text font-semibold">No endless scrolling.</span>
+              <span className="text-white font-semibold">No endless scrolling.</span>
             </p>
 
             <div className="flex flex-col xl:flex-row gap-4 xl:gap-6 justify-center items-center mb-12 xl:mb-20">
@@ -212,34 +212,34 @@ export default function LandingPage() {
 
             <div className="grid grid-cols-3 gap-6 xl:gap-12 max-w-2xl mx-auto stagger-animation">
               <div className="text-center">
-                <div className="text-3xl xl:text-5xl font-bold text-primary mb-2">10K+</div>
-                <div className="text-sm xl:text-base text-muted-foreground">Waitlist Members</div>
+                <div className="text-3xl xl:text-5xl font-bold text-white mb-2">10K+</div>
+                <div className="text-sm xl:text-base text-white/80">Waitlist Members</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl xl:text-5xl font-bold text-primary mb-2">4</div>
-                <div className="text-sm xl:text-base text-muted-foreground">Connection Modes</div>
+                <div className="text-3xl xl:text-5xl font-bold text-white mb-2">4</div>
+                <div className="text-sm xl:text-base text-white/80">Connection Modes</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl xl:text-5xl font-bold text-primary mb-2">100%</div>
-                <div className="text-sm xl:text-base text-muted-foreground">Authentic</div>
+                <div className="text-3xl xl:text-5xl font-bold text-white mb-2">100%</div>
+                <div className="text-sm xl:text-base text-white/80">Authentic</div>
               </div>
             </div>
           </div>
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle">
-          <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
-            <div className="w-1.5 h-3 bg-primary rounded-full mt-2 animate-float" />
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1.5 h-3 bg-white rounded-full mt-2 animate-float" />
           </div>
         </div>
       </section>
 
       <div className="container mx-auto px-4 xl:px-8">
-        <section id="why-companion" className="py-20 xl:py-40 fade-on-scroll">
-          <div className="max-w-5xl mx-auto">
+          <section id="why-companion" className="py-20 xl:py-40 fade-on-scroll">
+            <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12 xl:mb-20">
               <div className="inline-block mb-4">
-                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
+                <span className="text-sm xl:text-base text-white font-semibold bg-white/10 px-4 py-2 rounded-full">
                   Why Companion
                 </span>
               </div>
@@ -258,13 +258,13 @@ export default function LandingPage() {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 xl:gap-8 stagger-animation">
               <Card className="bg-card border-border hover-lift">
                 <CardContent className="p-6 xl:p-8 text-center">
-                  <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 xl:mb-6">
-                    <Shield className="w-7 h-7 xl:w-8 xl:h-8 text-primary" />
+                  <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-2xl bg-blue-100 flex items-center justify-center mx-auto mb-4 xl:mb-6">
+                    <Shield className="w-7 h-7 xl:w-8 xl:h-8 text-blue-600" />
                   </div>
-                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 text-foreground">
+                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 text-card-foreground">
                     Safe & Secure
                   </h3>
-                  <p className="text-base xl:text-lg text-muted-foreground">
+                  <p className="text-base xl:text-lg text-card-foreground/70">
                     No public location sharing. Mutual matching required. Your safety is our priority.
                   </p>
                 </CardContent>
@@ -272,13 +272,13 @@ export default function LandingPage() {
 
               <Card className="bg-card border-border hover-lift">
                 <CardContent className="p-6 xl:p-8 text-center">
-                  <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 xl:mb-6">
-                    <Star className="w-7 h-7 xl:w-8 xl:h-8 text-primary" />
+                  <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-2xl bg-amber-100 flex items-center justify-center mx-auto mb-4 xl:mb-6">
+                    <Star className="w-7 h-7 xl:w-8 xl:h-8 text-amber-600" />
                   </div>
-                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 text-foreground">
+                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 text-card-foreground">
                     Authentic Moments
                   </h3>
-                  <p className="text-base xl:text-lg text-muted-foreground">
+                  <p className="text-base xl:text-lg text-card-foreground/70">
                     Real experiences over endless scrolling. Connect through shared activities, not profiles.
                   </p>
                 </CardContent>
@@ -286,13 +286,13 @@ export default function LandingPage() {
 
               <Card className="bg-card border-border hover-lift">
                 <CardContent className="p-6 xl:p-8 text-center">
-                  <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 xl:mb-6">
-                    <Zap className="w-7 h-7 xl:w-8 xl:h-8 text-primary" />
+                  <div className="w-14 h-14 xl:w-16 xl:h-16 rounded-2xl bg-cyan-100 flex items-center justify-center mx-auto mb-4 xl:mb-6">
+                    <Zap className="w-7 h-7 xl:w-8 xl:h-8 text-cyan-600" />
                   </div>
-                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 text-foreground">
+                  <h3 className="text-xl xl:text-2xl font-semibold mb-3 text-card-foreground">
                     Instant Connection
                   </h3>
-                  <p className="text-base xl:text-lg text-muted-foreground">
+                  <p className="text-base xl:text-lg text-card-foreground/70">
                     Post what you feel like doing. Others join if they vibe with it. Simple as that.
                   </p>
                 </CardContent>
@@ -321,7 +321,7 @@ export default function LandingPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 xl:mb-20">
               <div className="inline-block mb-4">
-                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
+                <span className="text-sm xl:text-base text-white font-semibold bg-white/10 px-4 py-2 rounded-full">
                   How It Works
                 </span>
               </div>
@@ -376,7 +376,7 @@ export default function LandingPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 xl:mb-20">
               <div className="inline-block mb-4">
-                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
+                <span className="text-sm xl:text-base text-white font-semibold bg-white/10 px-4 py-2 rounded-full">
                   Connection Modes
                 </span>
               </div>
@@ -400,10 +400,10 @@ export default function LandingPage() {
                         <span className="text-3xl xl:text-4xl">{mode.emoji}</span>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl xl:text-3xl font-semibold mb-3 text-foreground">
+                        <h3 className="text-2xl xl:text-3xl font-semibold mb-3 text-card-foreground">
                           {mode.title}
                         </h3>
-                        <p className="text-base xl:text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-base xl:text-lg text-card-foreground/70 leading-relaxed">
                           {mode.description}
                         </p>
                       </div>
@@ -427,9 +427,9 @@ export default function LandingPage() {
               {differentiators.map((item, index) => (
                 <Card key={index} className="glass-hover shadow-card-hover border-border">
                   <CardContent className="p-6 xl:p-8 text-center">
-                    <Check className="w-10 h-10 xl:w-12 xl:h-12 text-primary mx-auto mb-3 xl:mb-4" />
-                    <h3 className="text-lg xl:text-xl font-semibold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-sm xl:text-base text-muted-foreground">{item.description}</p>
+                    <Check className="w-10 h-10 xl:w-12 xl:h-12 text-green-500 mx-auto mb-3 xl:mb-4" />
+                    <h3 className="text-lg xl:text-xl font-semibold text-card-foreground mb-2">{item.title}</h3>
+                    <p className="text-sm xl:text-base text-card-foreground/70">{item.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -476,7 +476,7 @@ export default function LandingPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 xl:mb-20">
               <div className="inline-block mb-4">
-                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
+                <span className="text-sm xl:text-base text-white font-semibold bg-white/10 px-4 py-2 rounded-full">
                   Pricing
                 </span>
               </div>
@@ -502,22 +502,22 @@ export default function LandingPage() {
                         Most Popular
                       </div>
                     )}
-                    <h3 className="text-2xl xl:text-3xl font-bold mb-2 text-foreground">
+                    <h3 className="text-2xl xl:text-3xl font-bold mb-2 text-card-foreground">
                       {tier.name}
                     </h3>
                     <div className="mb-6">
-                      <span className="text-3xl xl:text-5xl font-bold text-foreground">
+                      <span className="text-3xl xl:text-5xl font-bold text-card-foreground">
                         {tier.price}
                       </span>
-                      <span className="text-base xl:text-lg text-muted-foreground ml-2">
+                      <span className="text-base xl:text-lg text-card-foreground/70 ml-2">
                         {tier.period}
                       </span>
                     </div>
                     <ul className="space-y-3 xl:space-y-4 mb-6 xl:mb-8">
                       {tier.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-sm xl:text-base text-foreground">{feature}</span>
+                          <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm xl:text-base text-card-foreground">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -558,36 +558,45 @@ export default function LandingPage() {
             </Button>
           </div>
         </section>
+      </div>
 
-        <footer className="py-8 xl:py-12 bg-footer border-t border-footer">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col xl:flex-row justify-between items-center gap-6 xl:gap-8">
-              <div className="text-center xl:text-left">
-                <p className="text-base xl:text-lg font-semibold text-footer-foreground mb-2">
-                  Companion
-                </p>
-                <p className="text-sm xl:text-base text-footer-foreground/70">
-                  © Companion 2025
-                </p>
-              </div>
-              <div className="flex flex-wrap justify-center gap-4 xl:gap-8">
-                <a href="#about" className="text-sm xl:text-base text-footer-foreground/70 hover:text-footer-foreground transition-colors">
-                  About
-                </a>
-                <a href="#community" className="text-sm xl:text-base text-footer-foreground/70 hover:text-footer-foreground transition-colors">
-                  Community
-                </a>
-                <a href="#contact" className="text-sm xl:text-base text-footer-foreground/70 hover:text-footer-foreground transition-colors">
-                  Contact
-                </a>
-                <a href="#privacy" className="text-sm xl:text-base text-footer-foreground/70 hover:text-footer-foreground transition-colors">
-                  Privacy
-                </a>
-              </div>
+      <footer className="w-full py-8 xl:py-12 bg-[hsl(225,73%,25%)] text-white border-t border-white/20">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col xl:flex-row justify-between items-center gap-6 xl:gap-8">
+            <div className="text-center xl:text-left">
+              <p className="text-base xl:text-lg font-semibold text-white mb-2">
+                Companion
+              </p>
+              <p className="text-sm xl:text-base text-white/80">
+                © Companion 2025 - Made with love from Entrext
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 xl:gap-8">
+              <a href="#about" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+                About
+              </a>
+              <a href="#community" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+                Community
+              </a>
+              <a href="#contact" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+                Contact
+              </a>
+              <a href="#pricing" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+                Pricing
+              </a>
+              <a href="#terms" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+                Terms
+              </a>
+              <a href="#refund" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+                Refund
+              </a>
+              <a href="#privacy" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+                Privacy
+              </a>
             </div>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
 
       <Dialog open={isWaitlistOpen} onOpenChange={setIsWaitlistOpen}>
         <DialogContent className="max-w-md glass-light">
