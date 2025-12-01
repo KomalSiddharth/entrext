@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 interface AnimatedTextProps {
   text: string;
   className?: string;
+  delay?: number;
+  gradient?: boolean;
 }
 
-export default function AnimatedText({ text, className = "" }: AnimatedTextProps) {
+export default function AnimatedText({ text, className = "", delay = 0, gradient = false }: AnimatedTextProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -19,9 +21,9 @@ export default function AnimatedText({ text, className = "" }: AnimatedTextProps
       {words.map((word, index) => (
         <span
           key={index}
-          className="word-reveal inline-block mr-2"
+          className={`word-reveal inline-block mr-2 ${gradient ? 'gradient-text' : ''}`}
           style={{
-            animationDelay: `${index * 0.1}s`,
+            animationDelay: `${delay + index * 0.1}s`,
           }}
         >
           {word}
