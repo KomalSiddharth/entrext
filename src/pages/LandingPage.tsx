@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Heart, Users, Briefcase, UserPlus, ArrowRight, Check, Sparkles, Zap, Shield, Star } from "lucide-react";
