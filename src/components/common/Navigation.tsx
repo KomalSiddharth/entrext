@@ -54,9 +54,18 @@ export default function Navigation({ onWaitlistClick }: NavigationProps) {
           <div className="flex items-center justify-between h-16 xl:h-20">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="text-xl xl:text-2xl font-bold gradient-text hover:scale-105 transition-transform"
+              className="flex items-center gap-2 xl:gap-3 hover:scale-105 transition-transform"
             >
-              Companion
+              <img 
+                src="/companion-logo.png" 
+                alt="Companion Logo" 
+                className="w-8 h-8 xl:w-10 xl:h-10"
+              />
+              <span className={`text-xl xl:text-2xl font-bold transition-colors ${
+                isScrolled ? "text-primary-foreground" : "gradient-text"
+              }`}>
+                Companion
+              </span>
             </button>
 
             <div className="hidden xl:flex items-center gap-8">
@@ -64,22 +73,31 @@ export default function Navigation({ onWaitlistClick }: NavigationProps) {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-base text-foreground/80 hover:text-primary transition-colors relative group"
+                  className={`text-base transition-colors relative group ${
+                    isScrolled 
+                      ? "text-primary-foreground/80 hover:text-primary-foreground" 
+                      : "text-foreground/80 hover:text-primary"
+                  }`}
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                    isScrolled ? "bg-primary-foreground" : "bg-primary"
+                  }`} />
                 </button>
               ))}
               <Button
                 onClick={onWaitlistClick}
                 className="rounded-full px-6 shadow-soft hover:shadow-glow transition-all duration-300"
+                variant={isScrolled ? "default" : "default"}
               >
                 Join Waitlist
               </Button>
             </div>
 
             <button
-              className="xl:hidden text-foreground"
+              className={`xl:hidden transition-colors ${
+                isScrolled ? "text-primary-foreground" : "text-foreground"
+              }`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
