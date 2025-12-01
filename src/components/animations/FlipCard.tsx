@@ -47,10 +47,10 @@ export default function FlipCard({
               </div>
             </div>
             <div className="mt-8 flex-1 flex flex-col">
-              <h3 className="text-2xl xl:text-3xl font-semibold mb-4 text-foreground">
+              <h3 className="text-2xl xl:text-3xl font-semibold mb-4 text-card-foreground">
                 {title}
               </h3>
-              <p className="text-base xl:text-lg text-muted-foreground leading-relaxed flex-1">
+              <p className="text-base xl:text-lg text-card-foreground/70 leading-relaxed flex-1">
                 {description}
               </p>
             </div>
