@@ -1,28 +1,29 @@
-id: selectItemWithEmptyValue
-language: Tsx
-files:
-  - src/**/*.tsx
-rule:
-  kind: jsx_opening_element
-  all:
-    - has:
-        kind: identifier
-        regex: '^SelectItem$'
-    - has:
-        kind: jsx_attribute
-        all:
-          - has:
-              kind: property_identifier
-              regex: '^value$'
-          - any:
-              - has:
-                  kind: string
-                  regex: '^""$'
-              - has:
-                  kind: jsx_expression
-                  has:
-                    kind: string
-                    regex: '^""$'
+#!/bin/bash
 
-message: "检测到 SelectItem 组件使用空字符串 value: $MATCH， 这是错误用法， 运行时会报错， 请修改， 如果想实现全选，建议使用all代替空字符串"
-severity: error
+ast-grep scan -r .rules/SelectItem.yml
+
+useauth_output=$(ast-grep scan -r .rules/useAuth.yml 2>/dev/null)
+
+if [ -z "$useauth_output" ]; then
+    exit 0
+fi
+
+authprovider_output=$(ast-grep scan -r .rules/authProvider.yml 2>/dev/null)
+
+if [ -n "$authprovider_output" ]; then
+    exit 0
+fi
+
+echo "=== ast-grep scan -r .rules/useAuth.yml output ==="
+echo "$useauth_output"
+echo ""
+echo "=== ast-grep scan -r .rules/authProvider.yml output ==="
+echo "$authprovider_output"
+echo ""
+echo "⚠️  Issue detected:"
+echo "The code uses useAuth Hook but does not have AuthProvider component wrapping the components."
+echo "Please ensure that components using useAuth are wrapped with AuthProvider to provide proper authentication context."
+echo ""
+echo "Suggested fixes:"
+echo "1. Add AuthProvider wrapper in app.tsx or corresponding root component"
+echo "2. Ensure all components using useAuth are within AuthProvider scope"
