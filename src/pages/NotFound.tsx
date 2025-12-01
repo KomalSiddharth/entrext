@@ -1,3 +1,4 @@
+"use client";
 import { Link } from "react-router-dom";
 import PageMeta from "@/components/common/PageMeta";
 
