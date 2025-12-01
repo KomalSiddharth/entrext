@@ -166,31 +166,30 @@ export default function LandingPage() {
         
         <div className="container mx-auto px-4 xl:px-8 relative z-10">
           <div className="animate-slide-up max-w-5xl mx-auto">
-            <div className="mb-6 xl:mb-8 inline-block">
-              <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 xl:px-6 py-2 xl:py-3 animate-bounce-subtle">
-                <Sparkles className="w-4 h-4 xl:w-5 xl:h-5 text-white" />
-                <span className="text-sm xl:text-base text-white font-medium">
+            <div className="mb-8 xl:mb-12 inline-block">
+              <div className="flex items-center gap-2 bg-primary/10 rounded-full px-4 xl:px-6 py-2 xl:py-3 animate-bounce-subtle">
+                <Sparkles className="w-4 h-4 xl:w-5 xl:h-5 text-primary" />
+                <span className="text-sm xl:text-base text-primary font-medium">
                   Join 10,000+ people on the waitlist
                 </span>
               </div>
             </div>
 
-            <h1 className="text-5xl xl:text-8xl font-bold mb-4 xl:mb-8 text-white leading-tight">
-              Meet people who
-              <br />
-              <span className="text-shimmer">feel like home</span>
+            <h1 className="text-5xl xl:text-8xl font-bold mb-6 xl:mb-10 leading-tight">
+              <span className="text-foreground block">Meet people who</span>
+              <span className="gradient-text block">feel like home</span>
             </h1>
 
-            <p className="text-xl xl:text-3xl mb-6 xl:mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Real connections. Real moments.
+            <p className="text-xl xl:text-3xl mb-8 xl:mb-12 max-w-3xl mx-auto leading-relaxed">
+              <span className="text-muted-foreground">Real connections. Real moments.</span>
               <br />
-              <span className="text-white font-semibold">No endless scrolling.</span>
+              <span className="text-primary font-semibold">No endless scrolling.</span>
             </p>
 
             <div className="flex flex-col xl:flex-row gap-4 xl:gap-6 justify-center items-center mb-12 xl:mb-20">
               <Button
                 size="lg"
-                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full shadow-primary hover:scale-105 transition-all duration-300 group"
+                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full group"
                 onClick={() => setIsWaitlistOpen(true)}
               >
                 Join the waitlist
@@ -199,7 +198,7 @@ export default function LandingPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full shadow-button hover:bg-primary/5 transition-all duration-300"
+                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full transition-all duration-300"
                 onClick={() => {
                   const element = document.getElementById("how-it-works");
                   element?.scrollIntoView({ behavior: "smooth" });
@@ -212,16 +211,16 @@ export default function LandingPage() {
 
             <div className="grid grid-cols-3 gap-6 xl:gap-12 max-w-2xl mx-auto stagger-animation">
               <div className="text-center">
-                <div className="text-3xl xl:text-5xl font-bold text-white mb-2">10K+</div>
-                <div className="text-sm xl:text-base text-white/80">Waitlist Members</div>
+                <div className="text-3xl xl:text-5xl font-bold text-primary mb-2">10K+</div>
+                <div className="text-sm xl:text-base text-muted-foreground">Waitlist Members</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl xl:text-5xl font-bold text-white mb-2">4</div>
-                <div className="text-sm xl:text-base text-white/80">Connection Modes</div>
+                <div className="text-3xl xl:text-5xl font-bold text-primary mb-2">4</div>
+                <div className="text-sm xl:text-base text-muted-foreground">Connection Modes</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl xl:text-5xl font-bold text-white mb-2">100%</div>
-                <div className="text-sm xl:text-base text-white/80">Authentic</div>
+                <div className="text-3xl xl:text-5xl font-bold text-primary mb-2">100%</div>
+                <div className="text-sm xl:text-base text-muted-foreground">Authentic</div>
               </div>
             </div>
           </div>
@@ -239,7 +238,7 @@ export default function LandingPage() {
             <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12 xl:mb-20">
               <div className="inline-block mb-4">
-                <span className="text-sm xl:text-base text-white font-semibold bg-white/10 px-4 py-2 rounded-full">
+                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
                   Why Companion
                 </span>
               </div>
@@ -321,7 +320,7 @@ export default function LandingPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 xl:mb-20">
               <div className="inline-block mb-4">
-                <span className="text-sm xl:text-base text-white font-semibold bg-white/10 px-4 py-2 rounded-full">
+                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
                   How It Works
                 </span>
               </div>
@@ -376,7 +375,7 @@ export default function LandingPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 xl:mb-20">
               <div className="inline-block mb-4">
-                <span className="text-sm xl:text-base text-white font-semibold bg-white/10 px-4 py-2 rounded-full">
+                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
                   Connection Modes
                 </span>
               </div>
@@ -476,7 +475,7 @@ export default function LandingPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 xl:mb-20">
               <div className="inline-block mb-4">
-                <span className="text-sm xl:text-base text-white font-semibold bg-white/10 px-4 py-2 rounded-full">
+                <span className="text-sm xl:text-base text-primary font-semibold bg-primary/10 px-4 py-2 rounded-full">
                   Pricing
                 </span>
               </div>
@@ -541,56 +540,66 @@ export default function LandingPage() {
         <section className="py-20 xl:py-40 fade-on-scroll">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl xl:text-6xl font-bold mb-6 xl:mb-8 text-foreground leading-tight">
-              This isn't another app.
-              <br />
-              It's a way to <span className="gradient-text">feel connected</span> again.
+              <AnimatedText
+                text="This isn't another app."
+                className="block mb-2"
+                delay={0}
+              />
+              <AnimatedText
+                text="It's a way to feel connected again."
+                className="block"
+                delay={0.5}
+                gradient
+              />
             </h2>
-            <p className="text-xl xl:text-3xl mb-8 xl:mb-12 text-muted-foreground font-medium">
+            <p className="text-xl xl:text-3xl mb-8 xl:mb-12 text-muted-foreground font-medium animate-fade-in" style={{ animationDelay: '1.2s' }}>
               Because everyone deserves a real companion
             </p>
-            <Button
-              size="lg"
-              className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full shadow-primary hover:scale-105 transition-all duration-300 group"
-              onClick={() => setIsWaitlistOpen(true)}
-            >
-              Join the waitlist 🌿
-              <ArrowRight className="ml-2 w-5 h-5 xl:w-6 xl:h-6 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <div className="animate-fade-in" style={{ animationDelay: '1.5s' }}>
+              <Button
+                size="lg"
+                className="text-base xl:text-xl px-8 xl:px-12 py-6 xl:py-8 rounded-full group"
+                onClick={() => setIsWaitlistOpen(true)}
+              >
+                Join the waitlist 🌿
+                <ArrowRight className="ml-2 w-5 h-5 xl:w-6 xl:h-6 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
           </div>
         </section>
       </div>
 
-      <footer className="w-full py-8 xl:py-12 bg-[hsl(225,73%,25%)] text-white border-t border-white/20">
+      <footer className="w-full py-8 xl:py-12 bg-footer-bg text-footer-foreground border-t border-border">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col xl:flex-row justify-between items-center gap-6 xl:gap-8">
             <div className="text-center xl:text-left">
-              <p className="text-base xl:text-lg font-semibold text-white mb-2">
+              <p className="text-base xl:text-lg font-semibold text-footer-foreground mb-2">
                 Companion
               </p>
-              <p className="text-sm xl:text-base text-white/80">
+              <p className="text-sm xl:text-base text-footer-foreground/80">
                 © Companion 2025 - Made with love from Entrext
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-4 xl:gap-8">
-              <a href="#about" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+              <a href="#about" className="text-sm xl:text-base text-footer-foreground/80 hover:text-footer-foreground transition-colors">
                 About
               </a>
-              <a href="#community" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+              <a href="#community" className="text-sm xl:text-base text-footer-foreground/80 hover:text-footer-foreground transition-colors">
                 Community
               </a>
-              <a href="#contact" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+              <a href="#contact" className="text-sm xl:text-base text-footer-foreground/80 hover:text-footer-foreground transition-colors">
                 Contact
               </a>
-              <a href="#pricing" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+              <a href="/pricing" className="text-sm xl:text-base text-footer-foreground/80 hover:text-footer-foreground transition-colors">
                 Pricing
               </a>
-              <a href="#terms" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+              <a href="/terms" className="text-sm xl:text-base text-footer-foreground/80 hover:text-footer-foreground transition-colors">
                 Terms
               </a>
-              <a href="#refund" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+              <a href="/refund" className="text-sm xl:text-base text-footer-foreground/80 hover:text-footer-foreground transition-colors">
                 Refund
               </a>
-              <a href="#privacy" className="text-sm xl:text-base text-white/80 hover:text-white transition-colors">
+              <a href="#privacy" className="text-sm xl:text-base text-footer-foreground/80 hover:text-footer-foreground transition-colors">
                 Privacy
               </a>
             </div>
