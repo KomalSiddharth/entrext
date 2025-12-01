@@ -1,5 +1,4 @@
 "use client";
-
 import { ArrowLeft, Check, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
